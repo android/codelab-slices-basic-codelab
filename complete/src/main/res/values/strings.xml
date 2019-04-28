@@ -19,5 +19,11 @@
 
     <string name="slice_name">Temp Controls</string>
 
-    <string name="temp_string">Temperature: %d\u00B0C</string>
+    <string name="temperature_placeholder_title">Temperature</string>
+    <string name="temperature">Temperature: %d\u00B0C</string>
+
+    <string name="increase_temperature">Increase temperature</string>
+    <string name="decrease_temperature">Decrease temperature</string>
+
+    <string name="slice_action_primary_title">Temperature Controls</string>
 </resources>
