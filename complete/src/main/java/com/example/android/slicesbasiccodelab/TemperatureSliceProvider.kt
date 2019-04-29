@@ -48,6 +48,7 @@ class TemperatureSliceProvider : SliceProvider() {
     private lateinit var contextNonNull: Context
 
     override fun onCreateSliceProvider(): Boolean {
+        // TODO: Step 2.2, Review non-nullable Context variable.
         contextNonNull = context ?: return false
         return true
     }
@@ -67,6 +68,7 @@ class TemperatureSliceProvider : SliceProvider() {
     override fun onBindSlice(sliceUri: Uri): Slice? {
         Log.d(TAG, "onBindSlice(): $sliceUri")
 
+        // TODO: Step 2.3, Define a slice path.
         when (sliceUri.path) {
             "/temperature" -> return createTemperatureSlice(sliceUri)
         }
@@ -83,6 +85,7 @@ class TemperatureSliceProvider : SliceProvider() {
          * so we just need to use list() and include some general arguments before defining the
          * structure of the Slice.
          */
+        // TODO: Step 3.1, Review Slice's ListBuilder.
         return list(contextNonNull, sliceUri, ListBuilder.INFINITY) {
             setAccentColor(ContextCompat.getColor(contextNonNull, R.color.slice_accent_color))
             /* The first row of your slice should be a header. The header supports a title,
@@ -94,6 +97,7 @@ class TemperatureSliceProvider : SliceProvider() {
              * If we wanted to add additional rows, you can use the RowBuilder or the GridBuilder.
              *
              */
+            // TODO: Step 3.2, Create a Slice Header (title and primary action).
             header {
                 title = getTemperatureString(contextNonNull)
                 // Launches the main Activity associated with the Slice.
@@ -109,6 +113,7 @@ class TemperatureSliceProvider : SliceProvider() {
                     contextNonNull.getString(R.string.slice_action_primary_title)
                 )
             }
+            // TODO: Step 3.3, Add Temperature Up Slice Action.
             addAction(
                 SliceAction.create(
                     createTemperatureChangePendingIntent(getTemperature() + 1),
@@ -117,6 +122,7 @@ class TemperatureSliceProvider : SliceProvider() {
                     contextNonNull.getString(R.string.increase_temperature)
                 )
             )
+            // TODO: Step 3.4, Add Temperature Down Slice Action.
             addAction(
                 SliceAction.create(
                     createTemperatureChangePendingIntent(getTemperature() - 1),
@@ -128,6 +134,7 @@ class TemperatureSliceProvider : SliceProvider() {
         }
     }
 
+    // TODO: Step 3.4, Review Pending Intent Creation.
     // PendingIntent that triggers an increase/decrease in temperature.
     private fun createTemperatureChangePendingIntent(value: Int): PendingIntent {
         val intent = Intent(ACTION_CHANGE_TEMPERATURE)

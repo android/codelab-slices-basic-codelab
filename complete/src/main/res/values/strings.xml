@@ -30,6 +30,11 @@
     <!-- Strings specific for launching the external app Slice Viewer to preview Slice. -->
     <string name="launch_slice_viewer">Launch Slice Viewer</string>
 
+    <!--
+    IMPORTANT NOTE: For slices, you will always use content:// or url://. The slide-content://
+    format is exclusive to the Slice Viewer APK and should be generally ignored (unless you are
+    using that app to preview your slices).
+    -->
     <string name="uri_specific_for_slice_viewer_application" translatable="false">slice-content://com.example.android.slicesbasiccodelab/temperature</string>
 
     <string name="slice_viewer_application_package_name">com.example.android.sliceviewer</string>
