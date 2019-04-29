@@ -30,13 +30,11 @@ import androidx.slice.builders.ListBuilder
 import androidx.slice.builders.SliceAction
 import androidx.slice.builders.header
 import androidx.slice.builders.list
-import com.example.android.slicesbasiccodelab.MainActivity.Companion.getTemperature
 
+import com.example.android.slicesbasiccodelab.MainActivity.Companion.getTemperature
 import com.example.android.slicesbasiccodelab.MainActivity.Companion.getTemperatureString
 import com.example.android.slicesbasiccodelab.TemperatureBroadcastReceiver.Companion.ACTION_CHANGE_TEMPERATURE
 import com.example.android.slicesbasiccodelab.TemperatureBroadcastReceiver.Companion.EXTRA_TEMPERATURE_VALUE
-import com.example.android.slicesbasiccodelab.util.buildUriWithAuthority
-
 
 /**
  * Creates a temperature control Slice that mirrors the main activity. The slice displays the
@@ -47,10 +45,10 @@ import com.example.android.slicesbasiccodelab.util.buildUriWithAuthority
  */
 class TemperatureSliceProvider : SliceProvider() {
 
-    private lateinit var contextNonNull:Context
+    private lateinit var contextNonNull: Context
 
     override fun onCreateSliceProvider(): Boolean {
-        contextNonNull = context?: return false
+        contextNonNull = context ?: return false
         return true
     }
 
@@ -145,7 +143,6 @@ class TemperatureSliceProvider : SliceProvider() {
     companion object {
         private const val TAG = "TempSliceProvider"
         private var requestCode = 0
-
 
         fun getUri(context: Context, path: String): Uri {
             return Uri.Builder()

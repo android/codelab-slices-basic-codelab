@@ -26,4 +26,17 @@
     <string name="decrease_temperature">Decrease temperature</string>
 
     <string name="slice_action_primary_title">Temperature Controls</string>
+
+    <!-- Strings specific for launching the external app Slice Viewer to preview Slice. -->
+    <string name="launch_slice_viewer">Launch Slice Viewer</string>
+
+    <string name="uri_specific_for_slice_viewer_application" translatable="false">slice-content://com.example.android.slicesbasiccodelab/temperature</string>
+
+    <string name="slice_viewer_application_package_name">com.example.android.sliceviewer</string>
+
+    <string name="slice_viewer_application_not_enabled">Slice Viewer Application is not enabled.\nPlease enable in settings.</string>
+    <string name="slice_viewer_application_not_installed">Slice Viewer Application is not installed.\nCheck Logcat for details.</string>
+
+    <string name="error_message_slice_viewer_APK_missing">The Slice Viewer APK is missing on your device or emulator.\nThe Slice Viewer APK is included in the codelab.\nNavigate to the root of the codelab and run the following command after your phone or emulator is connected:\nadb install -r -t slice-viewer.apk</string>
+    <string name="error_message_slice_viewer_APK_disabled">The Slice Viewer APK is not enabled. Please enable in settings.</string>
 </resources>
