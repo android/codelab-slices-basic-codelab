@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019 Google LLC
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Slices Basic Codelab</string>
+
+    <string name="slice_name">Temp Controls</string>
+
+    <string name="temperature_placeholder_title">Temperature</string>
+    <string name="temperature">Temperature: %d\u00B0C</string>
+
+    <string name="increase_temperature">Increase temperature</string>
+    <string name="decrease_temperature">Decrease temperature</string>
+
+    <string name="slice_action_primary_title">Temperature Controls</string>
+
+    <!-- Strings specific for launching the external app Slice Viewer to preview Slice. -->
+    <string name="launch_slice_viewer">Launch Slice Viewer</string>
+
+    <!--
+    IMPORTANT NOTE: For slices, you will always use content:// or url://. The slide-content://
+    format is exclusive to the Slice Viewer APK and should be generally ignored (unless you are
+    using that app to preview your slices).
+    -->
+    <string name="uri_specific_for_slice_viewer_application" translatable="false">slice-content://com.example.android.slicesbasiccodelab/temperature</string>
+
+    <string name="slice_viewer_application_package_name">com.example.android.sliceviewer</string>
+
+    <string name="slice_viewer_application_not_enabled">Slice Viewer Application is not enabled.\nPlease enable in settings.</string>
+    <string name="slice_viewer_application_not_installed">Slice Viewer Application is not installed.\nCheck Logcat for details.</string>
+
+    <string name="error_message_slice_viewer_APK_missing">The Slice Viewer APK is missing on your device or emulator.\nThe Slice Viewer APK is included in the codelab.\nNavigate to the root of the codelab and run the following command after your phone or emulator is connected:\nadb install -r -t slice-viewer.apk</string>
+    <string name="error_message_slice_viewer_APK_disabled">The Slice Viewer APK is not enabled. Please enable in settings.</string>
+</resources>
