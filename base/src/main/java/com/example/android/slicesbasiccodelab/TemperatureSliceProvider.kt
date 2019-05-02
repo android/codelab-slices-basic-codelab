@@ -69,9 +69,8 @@ class TemperatureSliceProvider : SliceProvider() {
         Log.d(TAG, "onBindSlice(): $sliceUri")
 
         // TODO: Step 2.3, Define a slice path.
-        when (sliceUri.path) {
-            "/temperature" -> return createTemperatureSlice(sliceUri)
-        }
+
+
         return null
     }
 
@@ -99,38 +98,12 @@ class TemperatureSliceProvider : SliceProvider() {
              */
             // TODO: Step 3.2, Create a Slice Header (title and primary action).
             header {
-                title = getTemperatureString(contextNonNull)
-                // Launches the main Activity associated with the Slice.
-                primaryAction = SliceAction.create(
-                    PendingIntent.getActivity(
-                        contextNonNull,
-                        sliceUri.hashCode(),
-                        Intent(contextNonNull, MainActivity::class.java),
-                        0
-                    ),
-                    IconCompat.createWithResource(contextNonNull, R.drawable.ic_home),
-                    ListBuilder.ICON_IMAGE,
-                    contextNonNull.getString(R.string.slice_action_primary_title)
-                )
+                title = "Temperature Holder"
             }
             // TODO: Step 3.3, Add Temperature Up Slice Action.
-            addAction(
-                SliceAction.create(
-                    createTemperatureChangePendingIntent(getTemperature() + 1),
-                    IconCompat.createWithResource(contextNonNull, R.drawable.ic_temp_up),
-                    ListBuilder.ICON_IMAGE,
-                    contextNonNull.getString(R.string.increase_temperature)
-                )
-            )
+
             // TODO: Step 3.4, Add Temperature Down Slice Action.
-            addAction(
-                SliceAction.create(
-                    createTemperatureChangePendingIntent(getTemperature() - 1),
-                    IconCompat.createWithResource(contextNonNull, R.drawable.ic_temp_down),
-                    ListBuilder.ICON_IMAGE,
-                    contextNonNull.getString(R.string.decrease_temperature)
-                )
-            )
+
         }
     }
 

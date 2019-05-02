@@ -34,17 +34,7 @@
         </activity>
 
         <!-- TODO: Step 2.1, Add SliceProvider to Manifest. -->
-        <provider
-            android:authorities="com.example.android.slicesbasiccodelab"
-            android:name=".TemperatureSliceProvider"
-            android:grantUriPermissions="true"
-            android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.app.slice.category.SLICE" />
-            </intent-filter>
-        </provider>
 
         <receiver android:name=".TemperatureBroadcastReceiver"/>
 
