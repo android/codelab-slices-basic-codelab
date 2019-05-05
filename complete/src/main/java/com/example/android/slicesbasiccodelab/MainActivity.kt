@@ -144,11 +144,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         fun updateTemperature(context: Context, newTemperature: Int) {
+            Log.d(TAG, "updateTemperature(): $newTemperature")
 
+            // TODO: Step 2.2, Notify TemperatureSliceProvider the temperature changed.
             if (temperature != newTemperature) {
                 temperature = newTemperature
 
                 // Notify slice via URI that the temperature has changed so they can update views.
+                // NOTE: TemperatureSliceProvider inherits from ContentProvider, so we are
+                // actually assigning a ContentProvider to this authority (URI).
                 val uri = TemperatureSliceProvider.getUri(context, "temperature")
                 context.contentResolver.notifyChange(uri, null)
             }

@@ -144,14 +144,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         fun updateTemperature(context: Context, newTemperature: Int) {
+            Log.d(TAG, "updateTemperature(): $newTemperature")
 
-            if (temperature != newTemperature) {
-                temperature = newTemperature
+            // TODO: Step 2.2, Notify TemperatureSliceProvider the temperature changed.
 
-                // Notify slice via URI that the temperature has changed so they can update views.
-                val uri = TemperatureSliceProvider.getUri(context, "temperature")
-                context.contentResolver.notifyChange(uri, null)
-            }
         }
     }
 }

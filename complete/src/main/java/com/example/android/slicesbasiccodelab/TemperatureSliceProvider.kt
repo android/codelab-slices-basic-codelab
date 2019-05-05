@@ -48,7 +48,7 @@ class TemperatureSliceProvider : SliceProvider() {
     private lateinit var contextNonNull: Context
 
     override fun onCreateSliceProvider(): Boolean {
-        // TODO: Step 2.2, Review non-nullable Context variable.
+        // TODO: Step 2.3, Review non-nullable Context variable.
         contextNonNull = context ?: return false
         return true
     }
@@ -68,7 +68,7 @@ class TemperatureSliceProvider : SliceProvider() {
     override fun onBindSlice(sliceUri: Uri): Slice? {
         Log.d(TAG, "onBindSlice(): $sliceUri")
 
-        // TODO: Step 2.3, Define a slice path.
+        // TODO: Step 2.4, Define a slice path.
         when (sliceUri.path) {
             "/temperature" -> return createTemperatureSlice(sliceUri)
         }
