@@ -46,7 +46,7 @@ dependencies {
     // slice sample, below are a list of the slice dependencies:
     // implementation "androidx.slice:slice-core:latest-version"
     // implementation "androidx.slice:slice-builders:latest-version"
-    implementation "androidx.slice:slice-builders-ktx:1.0.0-alpha6"
+    implementation "androidx.slice:slice-builders-ktx:1.0.0-alpha08"
 
     testImplementation 'junit:junit:4.13.2'
 }
